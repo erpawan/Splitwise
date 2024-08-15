@@ -21,7 +21,7 @@ class User(AbstractUser):
     )
 
     def __str__(self):
-        return self.username
+        return f"{self.username} ID: {self.pk}"
 
 class Balance(models.Model):
     lender = models.ForeignKey(User, related_name='lent_balances', on_delete=models.CASCADE)
